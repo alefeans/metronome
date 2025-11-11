@@ -310,7 +310,7 @@ test.describe('Metronome E2E Tests', () => {
 
         // Take screenshot for visual verification
         await page.screenshot({
-            path: '/Users/alefesilva/dev/metrow/app/tests/screenshots/active-beat.png'
+            path: '/Users/alefesilva/dev/metronome/app/tests/screenshots/active-beat.png'
         });
 
         // Verify active class exists

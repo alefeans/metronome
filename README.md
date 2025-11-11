@@ -1,4 +1,4 @@
-# Metrow - Modern Web Metronome
+# Metronome - Modern Web Metronome
 
 A sleek, professional web metronome designed for musicians, featuring precise timing, customizable time signatures, and an intuitive interface.
 
@@ -44,8 +44,8 @@ A sleek, professional web metronome designed for musicians, featuring precise ti
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/metrow.git
-cd metrow
+git clone https://github.com/yourusername/metronome.git
+cd metronome
 ```
 
 2. Serve the files:
@@ -64,7 +64,7 @@ npx http-server app/src -p 8000
 ### Project Structure
 
 ```
-metrow/
+metronome/
 ├── app/
 │   ├── src/
 │   │   ├── index.html       # Main HTML file

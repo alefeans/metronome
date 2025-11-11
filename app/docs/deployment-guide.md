@@ -36,18 +36,18 @@
 
 ```bash
 # 1. Initialize git repository (if not already done)
-cd /Users/alefesilva/dev/metrow
+cd /Users/alefesilva/dev/metronome
 git init
 git add .
 git commit -m "Initial commit: Metronome app"
 
 # 2. Create GitHub repository
 # Go to: https://github.com/new
-# Name: metrow (or any name)
+# Name: metronome (or any name)
 # DO NOT initialize with README
 
 # 3. Push your code
-git remote add origin https://github.com/YOUR-USERNAME/metrow.git
+git remote add origin https://github.com/YOUR-USERNAME/metronome.git
 git branch -M main
 git push -u origin main
 
@@ -58,7 +58,7 @@ git push -u origin main
 # Click Save
 
 # 5. Wait 1-2 minutes, then visit:
-# https://YOUR-USERNAME.github.io/metrow/
+# https://YOUR-USERNAME.github.io/metronome/
 ```
 
 **That's it! Your app is live! 🎉**
@@ -128,7 +128,7 @@ git push -u origin main
 npm install -g vercel
 
 # 2. Deploy
-cd /Users/alefesilva/dev/metrow/app
+cd /Users/alefesilva/dev/metronome/app
 vercel
 
 # Follow the prompts:
@@ -136,11 +136,11 @@ vercel
 # - Set up and deploy: Y
 # - Which scope: Your account
 # - Link to existing project: N
-# - Project name: metrow
+# - Project name: metronome
 # - Directory: ./
 # - Override settings: N
 
-# 3. Done! Your site is live at: https://metrow.vercel.app
+# 3. Done! Your site is live at: https://metronome.vercel.app
 
 # Alternative: Deploy via Git
 # 1. Go to: https://vercel.com/new
@@ -167,7 +167,7 @@ vercel
 - **Setup:**
   ```bash
   npm install -g surge
-  cd /Users/alefesilva/dev/metrow/app
+  cd /Users/alefesilva/dev/metronome/app
   surge
   ```
 
@@ -210,7 +210,7 @@ vercel
 
 1. **Add CNAME file:**
    ```bash
-   echo "metronome.yourdomain.com" > /Users/alefesilva/dev/metrow/app/CNAME
+   echo "metronome.yourdomain.com" > /Users/alefesilva/dev/metronome/app/CNAME
    git add CNAME
    git commit -m "Add custom domain"
    git push
@@ -236,7 +236,7 @@ vercel
 
 ```bash
 # 1. Choose GitHub Pages (simplest)
-cd /Users/alefesilva/dev/metrow
+cd /Users/alefesilva/dev/metronome
 git init
 git add .
 git commit -m "Deploy metronome app"
@@ -244,13 +244,13 @@ git commit -m "Deploy metronome app"
 # 2. Create GitHub repo at: https://github.com/new
 
 # 3. Push code
-git remote add origin https://github.com/YOUR-USERNAME/metrow.git
+git remote add origin https://github.com/YOUR-USERNAME/metronome.git
 git branch -M main
 git push -u origin main
 
 # 4. Enable Pages: Repo Settings → Pages → main branch → /app folder
 
-# 5. Visit: https://YOUR-USERNAME.github.io/metrow/
+# 5. Visit: https://YOUR-USERNAME.github.io/metronome/
 ```
 
 **Your metronome is now live! 🎵**
