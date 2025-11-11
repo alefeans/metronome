@@ -6,11 +6,11 @@
 }
 
 :root {
-    /* Minimalist Color Palette */
+    /* Minimalist Color Palette - Light Mode */
     --bg-primary: #f5f5f5;
     --bg-secondary: #ffffff;
-    --text-primary: #2c3e50;
-    --text-secondary: #7f8c8d;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
     --accent-color: #3498db;
     --accent-hover: #2980b9;
     --border-color: #e0e0e0;
@@ -34,6 +34,24 @@
     --radius-md: 8px;
     --radius-lg: 12px;
     --radius-full: 50%;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #f0f0f0;
+    --text-secondary: #b8b8b8;
+    --accent-color: #4fa3d8;
+    --accent-hover: #6bb3e0;
+    --border-color: #404040;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+
+    /* Beat States - Dark Mode */
+    --beat-normal: #3a3a3a;
+    --beat-accent: #e85a4f;
+    --beat-mute: #606060;
+    --beat-active: #4fa3d8;
 }
 
 body {
@@ -141,8 +159,13 @@ header h1 {
     font-size: 1.125rem;
     font-weight: 600;
     text-align: center;
-    color: var(--text-primary);
+    color: #000000;
+    background: var(--bg-secondary);
     transition: border-color 0.2s ease;
+}
+
+[data-theme="dark"] #bpm-input {
+    color: #ffffff;
 }
 
 #bpm-input:focus {
@@ -157,10 +180,14 @@ header h1 {
     border: 2px solid var(--border-color);
     border-radius: var(--radius-md);
     font-size: 1rem;
-    color: var(--text-primary);
+    color: #000000;
     background: var(--bg-secondary);
     cursor: pointer;
     transition: border-color 0.2s ease;
+}
+
+[data-theme="dark"] #time-signature {
+    color: #ffffff;
 }
 
 #time-signature:focus {
@@ -359,8 +386,13 @@ header h1 {
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
-    color: var(--text-primary);
+    color: #000000;
+    background: var(--bg-secondary);
     transition: border-color 0.2s ease;
+}
+
+[data-theme="dark"] .loop-controls input[type="number"] {
+    color: #ffffff;
 }
 
 .loop-controls input[type="number"]:focus {
@@ -480,4 +512,39 @@ footer p {
 
 .beat.active {
     animation: pulse 0.15s ease-out;
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-full);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

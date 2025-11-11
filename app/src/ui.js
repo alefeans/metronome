@@ -18,11 +18,15 @@ class MetronomeUI {
         this.soundBarsInput = document.getElementById('sound-bars');
         this.muteBarsInput = document.getElementById('mute-bars');
         this.barCounter = document.getElementById('bar-counter');
+        this.themeToggle = document.getElementById('theme-toggle');
+        this.sunIcon = document.getElementById('sun-icon');
+        this.moonIcon = document.getElementById('moon-icon');
 
         // State
         this.visualBeatTimeout = null;
 
         // Initialize
+        this.initTheme();
         this.initEventListeners();
         this.renderBeatGrid();
         this.setupBeatCallback();
@@ -30,9 +34,47 @@ class MetronomeUI {
     }
 
     /**
+     * Initialize theme on page load
+     */
+    initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        this.updateThemeIcon(savedTheme);
+    }
+
+    /**
+     * Update theme icon based on current theme
+     */
+    updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            this.moonIcon.style.display = 'none';
+            this.sunIcon.style.display = 'block';
+        } else {
+            this.moonIcon.style.display = 'block';
+            this.sunIcon.style.display = 'none';
+        }
+    }
+
+    /**
+     * Toggle between light and dark themes
+     */
+    toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        this.updateThemeIcon(newTheme);
+    }
+
+    /**
      * Initialize all event listeners
      */
     initEventListeners() {
+        // Theme Toggle
+        this.themeToggle.addEventListener('click', () => {
+            this.toggleTheme();
+        });
         // BPM Controls
         this.bpmSlider.addEventListener('input', (e) => {
             this.updateBPM(parseInt(e.target.value));
